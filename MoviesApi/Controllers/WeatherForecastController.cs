@@ -21,7 +21,8 @@ namespace MoviesApi.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 10).Select(index => new WeatherForecast
+            var rng = new Random();
+            return Enumerable.Range(1, 1000).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
